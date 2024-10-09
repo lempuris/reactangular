@@ -18,5 +18,8 @@
       "ES2017.object"
     ],
     "useDefineForClassFields": false
-  }
+  },
+  "angularCompilerOptions": {
+      "strictTemplates": true
+    }
 }
