@@ -33,6 +33,8 @@ import {SafeUrlPipe} from './common/safe-url.pipe';
 import {MessagesComponent} from './messages/messages.component';
 import {SearchLessonsComponent} from './search-lessons/search-lessons.component';
 import { LoadingComponent } from './loading/loading.component';
+import { CoursesCardListComponent } from "./courses-card-list/courses-card-list.component";
+import { CommonModule } from '@angular/common';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -40,6 +42,8 @@ import { LoadingComponent } from './loading/loading.component';
         AboutComponent,
         CourseComponent,
         CourseDialogComponent,
+        CoursesCardListComponent,
+        HomeComponent,
         LoginComponent,
         LessonComponent,
         SafeUrlPipe,
@@ -48,26 +52,29 @@ import { LoadingComponent } from './loading/loading.component';
         LoadingComponent
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
-        BrowserAnimationsModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatCardModule,
-        MatTabsModule,
-        MatSidenavModule,
-        MatListModule,
-        MatToolbarModule,
-        MatInputModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatProgressSpinnerModule,
-        MatDialogModule,
-        AppRoutingModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatMomentDateModule,
-        ReactiveFormsModule], providers: [
+    CommonModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    AppRoutingModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    ReactiveFormsModule], 
+    
+    providers: [
         provideHttpClient(withInterceptorsFromDi())
     ] })
 export class AppModule {
