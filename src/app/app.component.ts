@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { LoadingService } from './loading/loading.service';
+import { MessagesService } from './messages/messagesService';
 
 
 
@@ -9,7 +10,8 @@ import { LoadingService } from './loading/loading.service';
     styleUrls: ['./app.component.css'],
     standalone: false,
     providers:[
-      LoadingService
+      LoadingService,
+      MessagesService
     ]
 })
 export class AppComponent implements  OnInit {
