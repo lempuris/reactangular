@@ -35,6 +35,8 @@ import {SearchLessonsComponent} from './search-lessons/search-lessons.component'
 import { LoadingComponent } from './loading/loading.component';
 import { CoursesCardListComponent } from "./courses-card-list/courses-card-list.component";
 import { CommonModule } from '@angular/common';
+import { LoadingService } from './loading/loading.service';
+import { MessagesService } from './messages/messagesService';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -75,7 +77,9 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule], 
     
     providers: [
-        provideHttpClient(withInterceptorsFromDi())
+        provideHttpClient(withInterceptorsFromDi()),
+        LoadingService,
+        MessagesService
     ] })
 export class AppModule {
 }

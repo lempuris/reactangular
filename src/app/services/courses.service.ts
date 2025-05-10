@@ -22,4 +22,23 @@ export class CoursesService {
       .put(`/api/courses/${courseId}`, changes)
       .pipe(shareReplay());
   }
+
+  // addCourse(course: Course): Observable<any> {
+  //   return this.http.post("/api/courses", course).pipe(shareReplay());
+  // }
+
+ 
+  // searchCourses(search: string): Observable<Course[]> {
+  //   const url = `courses?search=${search}`;
+  //   return this.http.get<Course[]>(url).pipe(
+  //     map((res) => res["payload"]),
+  //     shareReplay()
+  //   );
+  // }
+
+  // deleteCourse(courseId: string):Observable<any>{
+  //   return this.http.delete(`/api/courses/${courseId}`).pipe(
+  //     shareReplay()
+  //   )
+  // }
 }
