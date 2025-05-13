@@ -10,8 +10,8 @@ const AUTH_DATA = "auth_data";
 })
 export class AuthStore {
 
-    private subject = new BehaviorSubject<User>(null);
-    user$: Observable<User> = this.subject.asObservable();
+    private subject = new BehaviorSubject<User | null>(null);
+    user$: Observable<User | null> = this.subject.asObservable();
 
     isLoggedIn$: Observable<boolean>;
     isLoggedOut$: Observable<boolean>;

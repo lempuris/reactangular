@@ -27,9 +27,9 @@ import { CoursesStore } from "../services/courses.store";
   standalone: false,
 })
 export class HomeComponent implements OnInit {
-  beginnerCourses$: Observable<Course[]>;
+  beginnerCourses$!: Observable<Course[]>;
 
-  advancedCourses$: Observable<Course[]>;
+  advancedCourses$!: Observable<Course[]>;
 
   constructor(
     private coursesStore: CoursesStore

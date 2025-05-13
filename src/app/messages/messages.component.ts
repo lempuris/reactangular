@@ -13,10 +13,10 @@ import { MessagesService } from './messagesService';
 export class MessagesComponent implements OnInit {
   showMessages = false;
 
-  errors$: Observable<String[]>;
+  errors$!: Observable<string[]>;
 
   constructor(public messagesService: MessagesService) {
-    console.log("Created message omponent");
+    console.log("Created message component");
   }
 
   ngOnInit() {

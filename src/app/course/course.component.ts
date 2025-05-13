@@ -13,7 +13,7 @@ import {
   withLatestFrom,
   concatAll, shareReplay, catchError
 } from 'rxjs/operators';
-import {merge, fromEvent, Observable, concat, throwError} from 'rxjs';
+import {merge, fromEvent, Observable, concat, throwError, of} from 'rxjs';
 import {Lesson} from '../model/lesson';
 
 
@@ -25,9 +25,13 @@ import {Lesson} from '../model/lesson';
 })
 export class CourseComponent implements OnInit {
 
-  course: Course;
+  course!: Course;
 
-  lessons: Lesson[];
+  lessons!: Lesson[];
+  
+  loading$: Observable<boolean> = of(false);
+  
+  displayedColumns: string[] = ['seqNo', 'description', 'duration'];
 
   constructor(private route: ActivatedRoute) {
 
@@ -42,7 +46,6 @@ export class CourseComponent implements OnInit {
 
 
 }
-
 
 
 

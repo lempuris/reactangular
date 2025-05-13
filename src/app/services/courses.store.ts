@@ -6,6 +6,10 @@ import { HttpClient } from "@angular/common/http";
 import { LoadingService } from "../loading/loading.service";
 import { MessagesService } from "../messages/messagesService";
 
+interface CourseResponse {
+  payload: Course[];
+}
+
 @Injectable({ providedIn: "root" })
 export class CoursesStore {
   private subject = new BehaviorSubject<Course[]>([]);
@@ -21,8 +25,8 @@ export class CoursesStore {
   }
 
   private loadAllCourses() {
-    const loadCourses$ = this.http.get<Course[]>("/api/courses").pipe(
-      map((response) => response["payload"]),
+    const loadCourses$ = this.http.get<CourseResponse>("/api/courses").pipe(
+      map((response) => response.payload),
       catchError((err) => {
         const messages = "Could not load courses";
         this.messagesService.showErrors(messages);
