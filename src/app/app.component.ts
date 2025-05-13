@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthStore } from "./services/auth.store";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -7,9 +9,13 @@ import { Component, OnInit } from "@angular/core";
   standalone: false,
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(public auth: AuthStore, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  logout() {}
+  logout() {
+    this.auth.logout();
+    this.router.navigateByUrl("/login");
+  }
 }
